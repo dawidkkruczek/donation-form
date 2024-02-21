@@ -1,0 +1,83 @@
+.fields,
+.actions {
+  display: grid;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  row-gap: 24px;
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+}
+
+.fields {
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 32px;
+  }
+}
+
+.total {
+  align-items: center;
+  border: 1px solid var(--color-stroke);
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 16px;
+  margin: 0;
+
+  @media screen and (min-width: 768px) {
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 32px;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
+
+.totalLabel {
+  color: var(--color-blue-gray);
+  font-family: 'Work Sans';
+  font-size: 16px;
+  line-height: 1.2;
+
+  @media screen and (min-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.totalAmount {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+
+  @media screen and (min-width: 768px) {
+    font-size: 32px;
+  }
+}
+
+.summary {
+  background: var(--color-background);
+  border: 1px solid var(--color-stroke);
+  border-radius: 0 0 5px 5px;
+  border-top: 0;
+  color: var(--color-blue-gray);
+  font-family: 'Work Sans';
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0 0 32px;
+  padding: 24px 16px;
+
+  @media screen and (min-width: 768px) {
+    border: 0;
+    border-radius: 5px;
+  }
+}
+
+.actions {
+  padding: 8px;
+}

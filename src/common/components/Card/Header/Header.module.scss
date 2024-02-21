@@ -71,10 +71,6 @@
   &:hover {
     background-color: var(--color-dark-salmon);
   }
-
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
 }
 
 .closeIcon {
