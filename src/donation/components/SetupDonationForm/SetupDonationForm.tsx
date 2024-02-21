@@ -1,9 +1,9 @@
 import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import AmountInput from 'common/components/AmountInput/AmountInput';
 import Button from 'common/components/Button/Button';
-import Input from 'common/components/Input/Input';
-import Label from 'common/components/Label/Label';
+import AmountInput from 'common/components/Form/AmountInput/AmountInput';
+import Label from 'common/components/Form/Label/Label';
+import MonthInput from 'common/components/Form/MonthInput/MonthInput';
 import { amountStringToNumber } from 'common/utils/amount';
 import moment from 'moment';
 import styles from './SetupDonationForm.module.scss';
@@ -12,14 +12,16 @@ export interface Props {
   onCancel?: () => void;
 }
 
+const MIN_END_MONTH = moment().format('YYYY-MM');
+
 function SetupDonationModal({ onCancel }: Props): ReactElement {
   const [inputValues, setInputValues] = useState({
     amount: '',
-    endMonth: '',
+    endMonth: MIN_END_MONTH,
   });
   const [values, setValues] = useState({
     amount: 0,
-    endMonth: null,
+    endMonth: MIN_END_MONTH,
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
 
@@ -31,9 +33,9 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
     });
   };
 
-  const handleEndMonthChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setInputValues({ ...inputValues, endMonth: e.target.value });
-    setValues({ ...values, endMonth: e.target.value });
+  const handleEndMonthChange = (endMonth: string) => {
+    setInputValues({ ...inputValues, endMonth });
+    setValues({ ...values, endMonth });
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -56,11 +58,10 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
 
         <li>
           <Label htmlFor="end-month">Every month until</Label>
-          <Input
+          <MonthInput
             id="end-month"
-            min={moment().format('YYYY-MM')}
+            min={MIN_END_MONTH}
             onChange={handleEndMonthChange}
-            type="month"
             value={inputValues.endMonth}
           />
         </li>

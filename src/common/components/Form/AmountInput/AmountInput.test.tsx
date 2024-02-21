@@ -9,8 +9,8 @@ describe('common/components/AmountInput', () => {
   });
 
   it('should format value correctly', () => {
-    const { getByPlaceholderText } = render(<AmountInput />);
-    const input = getByPlaceholderText('0.00') as HTMLInputElement;
+    const { getByTestId } = render(<AmountInput />);
+    const input = getByTestId('amount-input-input') as HTMLInputElement;
 
     fireEvent.change(input, { target: { value: '1000' } });
     expect(input.value).toBe('1,000');

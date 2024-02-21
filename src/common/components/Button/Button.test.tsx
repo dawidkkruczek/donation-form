@@ -22,8 +22,8 @@ describe('common/components/Button', () => {
 
   it('should trigger onClick when passed', () => {
     const onClick = jest.fn();
-    const { getByText } = render(<Button onClick={onClick}>Sample</Button>);
-    fireEvent.click(getByText('Sample'));
+    const { getByTestId } = render(<Button onClick={onClick}>Sample</Button>);
+    fireEvent.click(getByTestId('button'));
     expect(onClick).toHaveBeenCalled();
   });
 });

@@ -12,6 +12,7 @@ exports[`common/components/AmountInput should render correctly 1`] = `
     </svg>
     <input
       class="root input"
+      data-testid="amount-input-input"
       inputmode="numeric"
       placeholder="0.00"
       type="text"

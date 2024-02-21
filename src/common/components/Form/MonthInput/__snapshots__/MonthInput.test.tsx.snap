@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/MonthInput should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+  >
+    <input
+      class="root input"
+      type="month"
+    />
+    <div
+      class="value"
+    >
+      <span
+        class="valueMonth"
+      >
+        February
+      </span>
+      <span
+        class="valueYear"
+      >
+        2024
+      </span>
+    </div>
+    <button
+      aria-label="Prev month"
+      class="arrow arrowPrev"
+      disabled=""
+      type="button"
+    >
+      <svg
+        class="arrowIcon"
+      >
+        arrow.svg
+      </svg>
+    </button>
+    <button
+      aria-label="Next month"
+      class="arrow arrowNext"
+      type="button"
+    >
+      <svg
+        class="arrowIcon"
+      >
+        arrow.svg
+      </svg>
+    </button>
+  </div>
+</DocumentFragment>
+`;

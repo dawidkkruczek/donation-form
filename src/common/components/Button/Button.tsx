@@ -27,7 +27,12 @@ function Button({
   });
 
   return (
-    <button className={rootClassName} type={type} {...buttonProps}>
+    <button
+      className={rootClassName}
+      data-testid="button"
+      type={type}
+      {...buttonProps}
+    >
       {children}
     </button>
   );

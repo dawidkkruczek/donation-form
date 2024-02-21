@@ -4,6 +4,7 @@ exports[`common/components/Button should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="root rootPrimary"
+    data-testid="button"
     type="button"
   >
     Sample
@@ -15,6 +16,7 @@ exports[`common/components/Button should render correctly with fullWidth 1`] = `
 <DocumentFragment>
   <button
     class="root rootFullWidth rootPrimary"
+    data-testid="button"
     type="button"
   >
     Sample
@@ -26,6 +28,7 @@ exports[`common/components/Button should render correctly with given style 1`] =
 <DocumentFragment>
   <button
     class="root rootGhost"
+    data-testid="button"
     type="button"
   >
     Sample
@@ -37,6 +40,7 @@ exports[`common/components/Button should render correctly with given style 2`] =
 <DocumentFragment>
   <button
     class="root rootPrimary"
+    data-testid="button"
     type="button"
   >
     Sample
