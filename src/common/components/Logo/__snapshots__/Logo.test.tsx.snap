@@ -9,7 +9,7 @@ exports[`common/components/Logo should render correctly 1`] = `
     <svg
       class="logo"
     >
-      Logo.svg
+      logo.svg
     </svg>
   </a>
 </DocumentFragment>

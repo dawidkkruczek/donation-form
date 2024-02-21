@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/Card should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+  >
+    <div
+      class="content"
+    />
+  </div>
+</DocumentFragment>
+`;
+
+exports[`common/components/Card should render correctly with header 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+  >
+    <div
+      class="root"
+    >
+      <div
+        class="content"
+      >
+        <svg />
+        <h2
+          class="title"
+        >
+          Title
+        </h2>
+        <div
+          class="subtitle"
+        >
+          Subtitle
+        </div>
+      </div>
+      <button
+        aria-label="Close"
+        class="close"
+        type="button"
+      >
+        <svg
+          class="closeIcon"
+        >
+          close-icon.svg
+        </svg>
+      </button>
+    </div>
+    <div
+      class="content"
+    />
+  </div>
+</DocumentFragment>
+`;

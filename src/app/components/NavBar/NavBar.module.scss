@@ -1,17 +1,13 @@
 .root {
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    align-items: center;
-    background: #fff;
-    display: flex;
-    height: 80px;
-    padding: 24px 40px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
+  align-items: center;
+  background: #fff;
+  display: flex;
+  height: 80px;
+  padding: 24px 40px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 .logo {

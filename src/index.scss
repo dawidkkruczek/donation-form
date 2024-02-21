@@ -1,0 +1,43 @@
+@import-normalize;
+
+:root {
+  --color-background: #f4f8fa;
+  --color-blue-gray: #1e2a32;
+  --color-dark-salmon: #f2d0c1;
+  --color-light-gray: #e8eaf2;
+  --color-lighter-gray: #f3f5fe;
+  --color-midnight-gray: #4d6475;
+  --color-midnight-purple: #423c66;
+  --color-purple-gray: #595d7b;
+  --color-salmon: #ffdbcb;
+  --color-text: #595d7b;
+  --color-white: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    'Inter',
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    'Roboto',
+    'Oxygen',
+    'Ubuntu',
+    'Cantarell',
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
