@@ -18,10 +18,12 @@ function AmountInput({ className, ...inputProps }: Props): ReactElement {
       <IconComponent className={styles.icon} />
 
       <NumericFormat
+        allowNegative={false}
         className={styles.input}
         customInput={Input}
         data-testid="amount-input-input"
         decimalScale={2}
+        fixedDecimalScale
         placeholder="0.00"
         thousandSeparator
         {...inputProps}

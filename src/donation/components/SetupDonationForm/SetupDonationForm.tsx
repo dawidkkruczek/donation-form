@@ -1,10 +1,19 @@
-import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
+import React, {
+  ChangeEvent,
+  FormEvent,
+  ReactElement,
+  useMemo,
+  useState,
+} from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Button from 'common/components/Button/Button';
 import AmountInput from 'common/components/Form/AmountInput/AmountInput';
 import Label from 'common/components/Form/Label/Label';
 import MonthInput from 'common/components/Form/MonthInput/MonthInput';
-import { amountStringToNumber } from 'common/utils/amount';
+import {
+  amountNumberToString,
+  amountStringToNumber,
+} from 'common/utils/amount';
 import moment from 'moment';
 import styles from './SetupDonationForm.module.scss';
 
@@ -12,7 +21,7 @@ export interface Props {
   onCancel?: () => void;
 }
 
-const MIN_END_MONTH = moment().format('YYYY-MM');
+const MIN_END_MONTH = moment().add(1, 'M').format('YYYY-MM');
 
 function SetupDonationModal({ onCancel }: Props): ReactElement {
   const [inputValues, setInputValues] = useState({
@@ -24,6 +33,12 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
     endMonth: MIN_END_MONTH,
   });
   const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
+
+  const totalAmount = useMemo(() => {
+    const endMonth = moment(values.endMonth);
+    const months = Math.ceil(endMonth.diff(moment(), 'months', true));
+    return `$${amountNumberToString(values.amount * months)}`;
+  }, [values]);
 
   const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
     setInputValues({ ...inputValues, amount: e.target.value });
@@ -67,15 +82,21 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
         </li>
       </ul>
 
-      <dl className={styles.total}>
-        <dt className={styles.totalLabel}>Total</dt>
-        <dd className={styles.totalAmount}>$200,000</dd>
-      </dl>
+      {values.amount > 0 && (
+        <>
+          <dl className={styles.total}>
+            <dt className={styles.totalLabel}>Total</dt>
+            <dd className={styles.totalAmount}>{totalAmount}</dd>
+          </dl>
 
-      <p className={styles.summary}>
-        You will be sending <strong>$25,000</strong> every month, until{' '}
-        <strong>August 2023</strong>. Thank you!
-      </p>
+          <p className={styles.summary}>
+            You will be sending{' '}
+            <strong>${amountNumberToString(values.amount)}</strong> every month,
+            until <strong>{moment(values.endMonth).format('MMMM YYYY')}</strong>
+            . Thank you!
+          </p>
+        </>
+      )}
 
       <ul className={styles.actions}>
         {isDesktop && (

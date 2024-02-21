@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ChangeEvent, ReactElement } from 'react';
 import classNames from 'classnames';
 import Input, { Props as InputProps } from 'common/components/Form/Input/Input';
 import moment from 'moment';
@@ -18,6 +18,10 @@ function AmountInput({
 }: Props): ReactElement {
   const { min, value } = inputProps;
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange(e.target.value);
+  };
+
   const handlePrevClick = () => {
     onChange(moment(value).add(-1, 'month').format('YYYY-MM'));
   };
@@ -28,7 +32,12 @@ function AmountInput({
 
   return (
     <div className={classNames(styles.root, className)}>
-      <Input className={styles.input} type="month" {...inputProps} />
+      <Input
+        className={styles.input}
+        onChange={handleChange}
+        type="month"
+        {...inputProps}
+      />
 
       <div className={styles.value}>
         <span className={styles.valueMonth}>
