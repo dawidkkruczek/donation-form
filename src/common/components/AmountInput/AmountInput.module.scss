@@ -1,0 +1,18 @@
+.root {
+  position: relative;
+}
+
+.icon {
+  color: var(--color-midnight-gray);
+  height: 24px;
+  left: 8px;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+}
+
+.input {
+  padding-left: 40px;
+}

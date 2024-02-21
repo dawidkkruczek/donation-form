@@ -1,8 +1,10 @@
-import React, { FormEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, FormEvent, ReactElement, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
+import AmountInput from 'common/components/AmountInput/AmountInput';
 import Button from 'common/components/Button/Button';
 import Input from 'common/components/Input/Input';
 import Label from 'common/components/Label/Label';
+import { amountStringToNumber } from 'common/utils/amount';
 import moment from 'moment';
 import styles from './SetupDonationForm.module.scss';
 
@@ -11,11 +13,28 @@ export interface Props {
 }
 
 function SetupDonationModal({ onCancel }: Props): ReactElement {
-  const [values, setValues] = useState({
+  const [inputValues, setInputValues] = useState({
     amount: '',
     endMonth: '',
   });
+  const [values, setValues] = useState({
+    amount: 0,
+    endMonth: null,
+  });
   const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
+
+  const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputValues({ ...inputValues, amount: e.target.value });
+    setValues({
+      ...values,
+      amount: amountStringToNumber(e.target.value),
+    });
+  };
+
+  const handleEndMonthChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setInputValues({ ...inputValues, endMonth: e.target.value });
+    setValues({ ...values, endMonth: e.target.value });
+  };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,15 +47,10 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
       <ul className={styles.fields}>
         <li>
           <Label htmlFor="amount">I can donate</Label>
-          <Input
+          <AmountInput
             id="amount"
-            onChange={(e) => {
-              setValues({ ...values, amount: e.target.value });
-            }}
-            placeholder="0.00"
-            step="0.01"
-            type="number"
-            value={values.amount}
+            onChange={handleAmountChange}
+            value={inputValues.amount}
           />
         </li>
 
@@ -45,11 +59,9 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
           <Input
             id="end-month"
             min={moment().format('YYYY-MM')}
-            onChange={(e) => {
-              setValues({ ...values, endMonth: e.target.value });
-            }}
+            onChange={handleEndMonthChange}
             type="month"
-            value={values.endMonth}
+            value={inputValues.endMonth}
           />
         </li>
       </ul>

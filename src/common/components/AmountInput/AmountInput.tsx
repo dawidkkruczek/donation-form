@@ -1,0 +1,32 @@
+import React, { ReactElement } from 'react';
+import { NumericFormat } from 'react-number-format';
+import classNames from 'classnames';
+import Input, { Props as InputProps } from 'common/components/Input/Input';
+import styles from './AmountInput.module.scss';
+import { ReactComponent as IconComponent } from './assets/icon.svg';
+
+// override some of InputProps to match NumericFormat props
+export interface Props extends InputProps {
+  defaultValue?: string | number;
+  type?: 'text' | 'password' | 'tel';
+  value?: string | number;
+}
+
+function AmountInput({ className, ...inputProps }: Props): ReactElement {
+  return (
+    <div className={classNames(styles.root, className)}>
+      <IconComponent className={styles.icon} />
+
+      <NumericFormat
+        className={styles.input}
+        customInput={Input}
+        decimalScale={2}
+        placeholder="0.00"
+        thousandSeparator
+        {...inputProps}
+      />
+    </div>
+  );
+}
+
+export default AmountInput;

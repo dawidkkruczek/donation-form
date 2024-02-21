@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/AmountInput should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="root"
+  >
+    <svg
+      class="icon"
+    >
+      icon.svg
+    </svg>
+    <input
+      class="root input"
+      inputmode="numeric"
+      placeholder="0.00"
+      type="text"
+      value=""
+    />
+  </div>
+</DocumentFragment>
+`;
