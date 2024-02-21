@@ -4552,6 +4552,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"change-case@npm:^5.4.3":
+  version: 5.4.3
+  resolution: "change-case@npm:5.4.3"
+  checksum: 10c0/dd15253559af11cec4bd7fe0ea2e7efc19aa0840afd50aa4ad17fa86f9bfa02891ab339fca02e7268f60387a24f7e2b887831a4d07b4e3c1b192ee067403f0dc
+  languageName: node
+  linkType: hard
+
 "char-regex@npm:^1.0.2":
   version: 1.0.2
   resolution: "char-regex@npm:1.0.2"
@@ -5606,6 +5613,7 @@ __metadata:
     "@types/react-dom": "npm:^18.2.19"
     "@typescript-eslint/eslint-plugin": "npm:^7.0.1"
     "@typescript-eslint/parser": "npm:^7.0.1"
+    change-case: "npm:^5.4.3"
     classnames: "npm:^2.5.1"
     eslint: "npm:^8.56.0"
     eslint-config-react-app: "npm:^7.0.1"

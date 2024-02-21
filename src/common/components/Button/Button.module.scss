@@ -1,0 +1,43 @@
+.root {
+  background-color: transparent;
+  border-radius: 5px;
+  border: 0;
+  cursor: pointer;
+  font-family: 'Work Sans';
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 20px;
+  padding: 16px 24px;
+  transition: all 0.5s ease;
+}
+
+.rootPrimary {
+  background-color: var(--color-midnight-purple);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-midnight-purple-light);
+  }
+
+  &:active {
+    background-color: var(--color-midnight-purple-dark);
+  }
+}
+
+.rootGhost {
+  border: 1px solid var(--color-purple-gray);
+  color: var(--color-purple-gray);
+
+  &:hover {
+    background-color: var(--color-ghost-purple-light);
+  }
+
+  &:active {
+    background-color: var(--color-ghost-purple-dark);
+  }
+}
+
+.rootFullWidth {
+  width: 100%;
+}

@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/Button should render correctly 1`] = `
+<DocumentFragment>
+  <button
+    class="root rootPrimary"
+    type="button"
+  >
+    Sample
+  </button>
+</DocumentFragment>
+`;
+
+exports[`common/components/Button should render correctly with fullWidth 1`] = `
+<DocumentFragment>
+  <button
+    class="root rootFullWidth rootPrimary"
+    type="button"
+  >
+    Sample
+  </button>
+</DocumentFragment>
+`;
+
+exports[`common/components/Button should render correctly with given style 1`] = `
+<DocumentFragment>
+  <button
+    class="root rootGhost"
+    type="button"
+  >
+    Sample
+  </button>
+</DocumentFragment>
+`;
+
+exports[`common/components/Button should render correctly with given style 2`] = `
+<DocumentFragment>
+  <button
+    class="root rootPrimary"
+    type="button"
+  >
+    Sample
+  </button>
+</DocumentFragment>
+`;
+
+exports[`common/components/Button should render correctly with given type 1`] = `
+<DocumentFragment>
+  <button
+    class="root rootPrimary"
+    type="button"
+  >
+    Sample
+  </button>
+</DocumentFragment>
+`;
+
+exports[`common/components/Button should render correctly with given type 2`] = `
+<DocumentFragment>
+  <button
+    class="root rootPrimary"
+    type="reset"
+  >
+    Sample
+  </button>
+</DocumentFragment>
+`;
+
+exports[`common/components/Button should render correctly with given type 3`] = `
+<DocumentFragment>
+  <button
+    class="root rootPrimary"
+    type="submit"
+  >
+    Sample
+  </button>
+</DocumentFragment>
+`;

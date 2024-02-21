@@ -4,9 +4,13 @@
   --color-background: #f4f8fa;
   --color-blue-gray: #1e2a32;
   --color-dark-salmon: #f2d0c1;
-  --color-light-gray: #e8eaf2;
-  --color-lighter-gray: #f3f5fe;
+  --color-ghost-purple-dark: #b2a7f425;
+  --color-ghost-purple-light: #b2a7f410;
+  --color-gray-light: #e8eaf2;
+  --color-gray-lighter: #f3f5fe;
   --color-midnight-gray: #4d6475;
+  --color-midnight-purple-dark: #241e47;
+  --color-midnight-purple-light: #645d93;
   --color-midnight-purple: #423c66;
   --color-purple-gray: #595d7b;
   --color-salmon: #ffdbcb;
@@ -35,9 +39,4 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
