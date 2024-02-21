@@ -1,8 +1,7 @@
 .root {
   background-color: transparent;
   border-radius: 5px;
-  border: 0;
-  cursor: pointer;
+  border: 1px solid transparent;
   font-family: 'Work Sans';
   font-size: 16px;
   font-weight: 600;
@@ -10,31 +9,43 @@
   line-height: 1.25;
   padding: 16px 24px;
   transition: all 0.5s ease;
+
+  &:disabled {
+    opacity: 0.75;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
 }
 
 .rootPrimary {
   background-color: var(--color-midnight-purple);
   color: var(--color-white);
 
-  &:hover {
-    background-color: var(--color-midnight-purple-light);
-  }
+  &:not(:disabled) {
+    &:hover {
+      background-color: var(--color-midnight-purple-light);
+    }
 
-  &:active {
-    background-color: var(--color-midnight-purple-dark);
+    &:active {
+      background-color: var(--color-midnight-purple-dark);
+    }
   }
 }
 
 .rootGhost {
-  border: 1px solid var(--color-purple-gray);
+  border-color: var(--color-purple-gray);
   color: var(--color-purple-gray);
 
-  &:hover {
-    background-color: var(--color-ghost-purple-light);
-  }
+  &:not(:disabled) {
+    &:hover {
+      background-color: var(--color-ghost-purple-light);
+    }
 
-  &:active {
-    background-color: var(--color-ghost-purple-dark);
+    &:active {
+      background-color: var(--color-ghost-purple-dark);
+    }
   }
 }
 

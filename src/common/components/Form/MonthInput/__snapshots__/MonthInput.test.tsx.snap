@@ -26,6 +26,7 @@ exports[`common/components/MonthInput should render correctly 1`] = `
     <button
       aria-label="Prev month"
       class="arrow arrowPrev"
+      data-testid="month-input-arrow-prev"
       disabled=""
       type="button"
     >
@@ -38,6 +39,7 @@ exports[`common/components/MonthInput should render correctly 1`] = `
     <button
       aria-label="Next month"
       class="arrow arrowNext"
+      data-testid="month-input-arrow-next"
       type="button"
     >
       <svg

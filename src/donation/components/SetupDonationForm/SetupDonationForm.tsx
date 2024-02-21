@@ -108,7 +108,7 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
         )}
 
         <li>
-          <Button fullWidth type="submit">
+          <Button disabled={values.amount === 0} fullWidth type="submit">
             Continue
           </Button>
         </li>

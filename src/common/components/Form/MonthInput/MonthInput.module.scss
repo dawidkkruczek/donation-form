@@ -51,6 +51,10 @@
   width: 24px;
   z-index: 2;
 
+  &:disabled {
+    opacity: 0.75;
+  }
+
   &:not(:disabled) {
     cursor: pointer;
 

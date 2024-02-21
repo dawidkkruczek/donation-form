@@ -8,14 +8,19 @@ describe('common/components/AmountInput', () => {
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should format value correctly', () => {
-    const { getByTestId } = render(<AmountInput />);
+  it('should set formatted value correctly', () => {
+    const onChange = jest.fn();
+    const { getByTestId } = render(<AmountInput onChange={onChange} />);
     const input = getByTestId('amount-input-input') as HTMLInputElement;
 
     fireEvent.change(input, { target: { value: '1000' } });
-    expect(input.value).toBe('1,000');
 
-    fireEvent.change(input, { target: { value: '1000.00' } });
-    expect(input.value).toBe('1,000.00');
+    expect(onChange).toHaveBeenCalledWith(
+      expect.objectContaining({
+        target: expect.objectContaining({
+          value: '1,000.00',
+        }),
+      }),
+    );
   });
 });

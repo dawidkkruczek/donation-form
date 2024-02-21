@@ -49,6 +49,7 @@ function AmountInput({
       <button
         aria-label="Prev month"
         className={classNames(styles.arrow, styles.arrowPrev)}
+        data-testid="month-input-arrow-prev"
         disabled={moment(value).isSameOrBefore(min)}
         onClick={handlePrevClick}
         type="button"
@@ -59,6 +60,7 @@ function AmountInput({
       <button
         aria-label="Next month"
         className={classNames(styles.arrow, styles.arrowNext)}
+        data-testid="month-input-arrow-next"
         onClick={handleNextClick}
         type="button"
       >
