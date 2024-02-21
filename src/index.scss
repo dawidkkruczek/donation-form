@@ -12,6 +12,7 @@
   --color-midnight-purple-dark: #241e47;
   --color-midnight-purple-light: #645d93;
   --color-midnight-purple: #423c66;
+  --color-placeholder: #bebebe;
   --color-purple-gray: #595d7b;
   --color-salmon: #ffdbcb;
   --color-stroke: #e9eef2;
@@ -40,4 +41,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: var(--color-midnight-purple);
+  color: var(--color-white);
 }

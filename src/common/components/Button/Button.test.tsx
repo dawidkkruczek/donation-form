@@ -9,15 +9,8 @@ describe('common/components/Button', () => {
   });
 
   it('should render correctly with given style', () => {
-    Object.values(Button.Style).forEach((style) => {
-      const { asFragment } = render(<Button style={style}>Sample</Button>);
-      expect(asFragment()).toMatchSnapshot();
-    });
-  });
-
-  it('should render correctly with given type', () => {
-    Object.values(Button.Type).forEach((type) => {
-      const { asFragment } = render(<Button type={type}>Sample</Button>);
+    Object.values(Button.Variant).forEach((variant) => {
+      const { asFragment } = render(<Button variant={variant}>Sample</Button>);
       expect(asFragment()).toMatchSnapshot();
     });
   });

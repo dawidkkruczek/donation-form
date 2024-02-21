@@ -1,7 +1,9 @@
 import React, { FormEvent, ReactElement, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import Button from 'common/components/Button/Button';
+import Input from 'common/components/Input/Input';
 import Label from 'common/components/Label/Label';
+import moment from 'moment';
 import styles from './SetupDonationForm.module.scss';
 
 export interface Props {
@@ -9,11 +11,11 @@ export interface Props {
 }
 
 function SetupDonationModal({ onCancel }: Props): ReactElement {
-  const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
-  const [values] = useState({
-    amount: null,
-    endMonth: null,
+  const [values, setValues] = useState({
+    amount: '',
+    endMonth: '',
   });
+  const isDesktop = useMediaQuery({ query: '(min-width: 768px)' });
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -26,12 +28,29 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
       <ul className={styles.fields}>
         <li>
           <Label htmlFor="amount">I can donate</Label>
-          Form Field
+          <Input
+            id="amount"
+            onChange={(e) => {
+              setValues({ ...values, amount: e.target.value });
+            }}
+            placeholder="0.00"
+            step="0.01"
+            type="number"
+            value={values.amount}
+          />
         </li>
 
         <li>
           <Label htmlFor="end-month">Every month until</Label>
-          Form Field
+          <Input
+            id="end-month"
+            min={moment().format('YYYY-MM')}
+            onChange={(e) => {
+              setValues({ ...values, endMonth: e.target.value });
+            }}
+            type="month"
+            value={values.endMonth}
+          />
         </li>
       </ul>
 
@@ -48,14 +67,14 @@ function SetupDonationModal({ onCancel }: Props): ReactElement {
       <ul className={styles.actions}>
         {isDesktop && (
           <li>
-            <Button fullWidth onClick={onCancel} style={Button.Style.Ghost}>
+            <Button fullWidth onClick={onCancel} variant={Button.Variant.Ghost}>
               Cancel
             </Button>
           </li>
         )}
 
         <li>
-          <Button fullWidth type={Button.Type.Submit}>
+          <Button fullWidth type="submit">
             Continue
           </Button>
         </li>

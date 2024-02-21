@@ -1,48 +1,38 @@
-import React, { PropsWithChildren, ReactElement } from 'react';
+import React, { ComponentProps, ReactElement } from 'react';
 import { pascalCase } from 'change-case';
 import classNames from 'classnames';
 import styles from './Button.module.scss';
 
-enum Style {
+enum Variant {
   Ghost = 'ghost',
   Primary = 'primary',
 }
-
-enum Type {
-  Button = 'button',
-  Reset = 'reset',
-  Submit = 'submit',
-}
-
-export interface Props extends PropsWithChildren {
-  className?: string;
+export interface Props extends ComponentProps<'button'> {
   fullWidth?: boolean;
   onClick?: () => void;
-  style?: Style;
-  type?: Type;
+  variant?: Variant;
 }
 
 function Button({
   children,
   className,
   fullWidth,
-  onClick,
-  style = Style.Primary,
-  type = Type.Button,
+  type = 'button',
+  variant = Variant.Primary,
+  ...buttonProps
 }: Props): ReactElement {
   const rootClassName = classNames(styles.root, className, {
     [styles.rootFullWidth]: fullWidth,
-    [styles[`root${pascalCase(style)}`]]: style,
+    [styles[`root${pascalCase(variant)}`]]: variant,
   });
 
   return (
-    <button className={rootClassName} onClick={onClick} type={type}>
+    <button className={rootClassName} type={type} {...buttonProps}>
       {children}
     </button>
   );
 }
 
-Button.Style = Style;
-Button.Type = Type;
+Button.Variant = Variant;
 
 export default Button;

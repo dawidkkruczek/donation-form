@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/Input should render correctly 1`] = `
+<DocumentFragment>
+  <input
+    class="root"
+    type="text"
+  />
+</DocumentFragment>
+`;
